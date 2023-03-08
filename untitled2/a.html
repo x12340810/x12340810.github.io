@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>待機網頁</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background-color: #FFFFFF;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    h1 {
+      color: #666666;
+    }
+    #countdown {
+      font-size: 48px;
+      color: #666666;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+<h1>伺服器發芽了，請稍後再試。</h1>
+<img src="2.png" alt="馬鈴薯1號" height="295" width="160" />
+<img src="3552745983_29ba256222.jpg" alt="我是圖片"  />
+<img src="下載.png" alt="馬鈴薯2號"  />
+
+<div id="countdown"></div>
+
+<script>
+  // 設定待機時間（單位：秒）
+  var count = 15;
+
+  // 定義計時器
+  var countdown = setInterval(function() {
+    count--;
+    document.getElementById("countdown").innerHTML = count + " 秒後自動重新整理";
+    if (count === 0) {
+      clearInterval(countdown);
+      location.reload();
+    }
+  }, 1000);
+</script>
+</body>
+</html>
